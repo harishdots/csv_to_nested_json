@@ -34,9 +34,6 @@ This project contains the simple UI to upload CSV file and submit. After that up
     ```
 
 ## Test Case Run
-
-- Go to inside the csv_to_json/tests folder then run the following command.
-    ```
-    cd csv_to_json/tests 
-    python test_csv_to_json_tree.py or python csv_to_json/tests/test_csv_to_json_tree.py
-    ```
+```
+python -m pytest csv_to_json/tests
+```
