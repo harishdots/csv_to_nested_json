@@ -14,7 +14,7 @@ class ConvertCsvToJsonTree:
 
     def create_parent_tree(self, is_dump_with_indent=True):
         """
-        - Find max columns depth in csv 
+        - Find max columns depth in csv
         - This function is used to create parent tree and push all child into it.
         """
         self.max_column = int(len(self.csv_data.columns) / 3)
