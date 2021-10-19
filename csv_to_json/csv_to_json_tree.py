@@ -1,6 +1,7 @@
 import json
 from itertools import repeat
 
+
 class ConvertCsvToJsonTree:
     """
     This class is used to to convert CSV data into json hierarchy tree
@@ -11,7 +12,7 @@ class ConvertCsvToJsonTree:
         self.max_column = 0
         self.csv_data = csv_data
 
-    def create_parent_tree(self, is_dump_with_indent = True):
+    def create_parent_tree(self, is_dump_with_indent=True):
         """
         - Find max columns depth in csv 
         - This function is used to create parent tree and push all child into it.
@@ -32,14 +33,14 @@ class ConvertCsvToJsonTree:
         """
         if level < self.max_column:
             return list(
-                        filter(None.__ne__, list(
-                            map(
-                                self.mapping_json_encoder,
-                                csv_data.iloc[:, (3 * (level + 1)) - 1].unique(),
-                                repeat(level), repeat(csv_data)
-                            )
-                        ))
+                filter(None.__ne__, list(
+                    map(
+                        self.mapping_json_encoder,
+                        csv_data.iloc[:, (3 * (level + 1)) - 1].unique(),
+                        repeat(level), repeat(csv_data)
                     )
+                ))
+            )
         else:
             return []
 
