@@ -3,6 +3,7 @@ from csv_to_json import create_app
 app = create_app()
 
 import sys
+
 ROOT_PATH = sys.path.insert(0, '..')
 
 app.secret_key = 'super secret key'
