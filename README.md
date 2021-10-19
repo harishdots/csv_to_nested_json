@@ -111,3 +111,8 @@ docker run csv_to_json_web sh -c "python -m pytest csv_to_json/tests"
         - This action run to deploy build to heroku.
     - Post action actions/checkout@v1
     - Complete job
+
+## Third party library for UI
+
+* Bootstrap 4.2.1
+* Jquery 3.3.1
