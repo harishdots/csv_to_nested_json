@@ -30,9 +30,9 @@
 
 ## Test Case Run on docker 
 
-    ```
-    docker run csv_to_json_web sh -c "python -m pytest csv_to_json/tests"
-    ```
+```
+docker run csv_to_json_web sh -c "python -m pytest csv_to_json/tests"
+```
 
 
 ## CI/CD with Github using Heroku Deployment
@@ -55,31 +55,31 @@
 
 * Lets explains what each of the lines does.
 
-    -name: CI
+    - name: CI
         -This is just specifying a name for the workflow
-    -on: [push] The on command is used to specify an event that will trigger the workflow, this event can be push, pull_request etc.
+    - on: [push] The on command is used to specify an event that will trigger the workflow, this event can be push, pull_request etc.
         ```
         # Use an array when using more than one event
         on: [push, pull_request] 
         ```
-    -jobs: Here we are specifying the job we want to run, in this case, we are setting up a build job.
+    - jobs: Here we are specifying the job we want to run, in this case, we are setting up a build job.
         ```
             runs-on: ubuntu-latest
         ```
-    -Steps: just indicate the various steps you want to run on that job        
+    - Steps: just indicate the various steps you want to run on that job        
         ```
         uses: actions/checkout@v1
         ```
         - it will use the actions/checkout github action with the ref @v1. This ref only refers to the github action version (nothing to do with your repo).
-    -Run fetch --prune --unshallow
-        -It will convert the shallow clone to the regular one.
-    -Run Install Dependencies
-        -It will install all the dependencies
-    -Run Lint with flake8
-        -It will install flake8 and stop the build if there are Python syntax errors or undefined names
-    -Run Tests
-        -It will run all the test cases which is created into the app.
-    -Deploy to Heroku
-        -This action run to deploy build to heroku.
-    -Post action actions/checkout@v1
-    -Complete job
+    - Run fetch --prune --unshallow
+        - It will convert the shallow clone to the regular one.
+    - Run Install Dependencies
+        - It will install all the dependencies
+    - Run Lint with flake8
+        - It will install flake8 and stop the build if there are Python syntax errors or undefined names
+    - Run Tests
+        - It will run all the test cases which is created into the app.
+    - Deploy to Heroku
+        - This action run to deploy build to heroku.
+    - Post action actions/checkout@v1
+    - Complete job
