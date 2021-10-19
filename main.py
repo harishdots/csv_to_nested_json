@@ -1,8 +1,7 @@
 from csv_to_json import create_app
+import sys
 
 app = create_app()
-
-import sys
 
 ROOT_PATH = sys.path.insert(0, '..')
 
