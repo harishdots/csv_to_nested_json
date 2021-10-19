@@ -1,8 +1,8 @@
-from flask import Blueprint, render_template, request, flash, Response, jsonify
+from csv_to_json.csv_to_json_tree import ConvertCsvToJsonTree
+from flask import Blueprint, render_template, request, flash, Response
 import pandas as pd
 
 views = Blueprint('views', __name__)
-from .csv_to_json_tree import ConvertCsvToJsonTree
 
 ALLOWED_EXTENSIONS = {'csv'}
 
